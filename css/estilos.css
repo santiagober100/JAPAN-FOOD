@@ -1,0 +1,299 @@
+/* Importar fuente Oswald de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cuerpo general */
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.main-header {
+    background-color: #BC002D;
+    /* Rojo bandera de Japón */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* Botón de menú (Esquina superior izquierda) */
+#btn-menu {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#btn-menu:hover {
+    background-color: white;
+    color: #BC002D;
+}
+
+/* Menú Lateral (Sidebar) */
+.sidebar {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    padding: 4rem 2rem 2rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.abierto {
+    left: 0;
+}
+
+.sidebar h2 {
+    color: #FFD700;
+    /* Amarillo para el título del índice */
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #BC002D;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #FFD700;
+}
+
+/* Contenido Principal */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Secciones */
+.seccion {
+    background: white;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.seccion h2 {
+    color: #BC002D;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid #FFD700;
+    /* Línea amarilla debajo del título */
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.seccion p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Tarjetas Disparadoras (Lo que se ve antes de abrir el pop-up) */
+.card-popup-trigger {
+    background: white;
+    border-left: 6px solid #BC002D;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-popup-trigger:hover {
+    transform: translateX(10px);
+    /* Se mueve a la derecha al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(188, 0, 45, 0.2);
+}
+
+.card-popup-trigger h3 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+}
+
+.card-popup-trigger p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Ventanas Emergentes (MODALES - Amarillos con letras negras) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #FFD700;
+    /* Fondo Amarillo */
+    color: #1a1a1a;
+    /* Texto Negro */
+    padding: 3rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    animation: aparecer 0.3s ease;
+    border: 4px solid #BC002D;
+    /* Borde rojo para combinar */
+}
+
+.modal-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #BC002D;
+}
+
+.modal-content p {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #BC002D;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Estilos específicos para la Portada (index.html) */
+.portada-body {
+    background-color: #FFFFFF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.bandera-japon {
+    width: 350px;
+    height: 350px;
+    background-color: #BC002D;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    box-shadow: 0 15px 40px rgba(188, 0, 45, 0.4);
+    transition: transform 0.3s;
+    text-align: center;
+    padding: 2rem;
+}
+
+.bandera-japon:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para las imágenes dentro de las tarjetas del menú */
+.card-popup-trigger img {
+    width: 100%;
+    height: 200px;
+    /* Altura fija para que todas se vean iguales */
+    object-fit: cover;
+    /* MAGIA CSS: Recorta la imagen para que no se deforme */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para que el video de YouTube sea responsivo dentro del Pop-up */
+.modal-content iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.modal-content ul {
+    text-align: left;
+    margin: 1rem auto;
+    max-width: 80%;
+    font-size: 1.1rem;
+}
