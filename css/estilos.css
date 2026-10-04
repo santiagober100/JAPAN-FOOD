@@ -243,19 +243,24 @@ footer {
 /*Actualización de código. Se eleminan líneas innecesarias en .portada-body*/
 .portada-body {
     background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 /*Actualización del código. Centra el círculo del inicio*/
+/*Corrección de actualización. Se agregan líneas para corregir la alineación del index*/
 .portada-body main {
     max-width: none;
     margin: 0;
+    padding: 0;
     width: 100%;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .portada-body h1 {
     line-height: 1;
-}
 .bandera-japon {
     width: 350px;
     height: 350px;
