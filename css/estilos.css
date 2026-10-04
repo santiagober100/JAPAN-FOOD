@@ -15,11 +15,19 @@ body {
     line-height: 1.6;
     color: #1a1a1a;
     background-color: #f4f4f4;
+    /*Actualización del código para que el pie de página se ajuste a cada pantall
+    Esto hace que el cuerpo de la página ocupe todo el espacio necesario para que el pie de página se ubique en la parte inferior*/
+    display: flex;
+    /*Organiaza el encabezado, el cuerpo y el pie de página en una columna vertical*/
+    flex-direction: column;
+    /*Hace que el cuerpo ocupe minimo el 100% del espacio*/
+    min-height: 100vh;
 }
 
 /* Header */
 .main-header {
-    background-color: #BC002D;
+    /*Se cambia el color #BC002D a #900020 para cumplir con los niveles de contraste AAA en WebAim*/
+    background-color: #900020;
     /* Rojo bandera de Japón */
     color: white;
     text-align: center;
@@ -106,6 +114,9 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 3rem 2rem;
+    /*Actualización del código
+    Obliga el pie de página a ubicarse en la parte inferior de la pantalla*/
+    flex: 1;
 }
 
 /* Secciones */
@@ -240,7 +251,6 @@ footer {
 }
 
 /* Estilos específicos para la Portada (index.html) */
-/*Actualización de código. Se eleminan líneas innecesarias en .portada-body*/
 .portada-body {
     background-color: #FFFFFF;
     display: flex;
@@ -261,6 +271,7 @@ footer {
 }
 .portada-body h1 {
     line-height: 1;
+}
 .bandera-japon {
     width: 350px;
     height: 350px;
@@ -293,13 +304,59 @@ footer {
     border-radius: 5px;
     margin-bottom: 1rem;
 }
+/*Actualización del código*/
+@media (max-width: 768px){
+    main {
+        /*Actualización del código
+        /*Reduce el espacio de los lados para ganar espacio*/
+        padding: 2rem 1rem;
+    }
+    .seccion {
+        /*Reducir el espacio interno de las secciones blancas*/
+        padding: 2rem 1rem;
 
-/* Estilos para que el video de YouTube sea responsivo dentro del Pop-up */
-.modal-content iframe {
-    width: 100%;
-    height: 315px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 1.5rem;
+    }
+    .main-header h1 {
+        /*Reducir el tamaño de los títulos h1*/
+        font-size: 2rem;
+    }
+    .seccion h2 {
+        /*Reducir el tamaño de los títulos h2*/
+        font-size: 1.8rem; 
+    }
+    .bandera-japon {
+        /*Ajuste de la bander ade Japon para la visualización en dispositivos móviles*/
+        width: 250px;
+        height: 250px;
+        font-size: 2rem;
+    }
+    .sidebar {
+        /*Ajuste del menú lateral para celulares, ahora ocupa toda la pantalla*/
+        width: 100%;
+        left: -100%;
+    }
+    .sidebar.abierto {
+        left: 0;
+    }
+    .modal-content {
+        /*Ajuste de los Pop Up para qué ocupen casí toda la pantalla, mejorando la visualización en móviles*/
+        width: 95%;
+        max-width: none;
+        padding: 2rem 1rem;
+    }
+    #btn-menu {
+        /*Ajuste del menú*/
+        top: 1rem;
+        left: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+    }
 }
-
+/*Se crea un borde amarillo para mejorar la accesibilidad y manejo de la página web usando el Tab*/
+*:focus-visible {
+    /*Borde amarillo*/
+    outline: 3px solid #FFD700;
+    outline-offset: 3px;
+    border-radius: 4px;
+    z-index: 10;
+}
