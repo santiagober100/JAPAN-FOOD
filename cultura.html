@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura - JAPAN FOOD</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <button id="btn-menu">Menú</button>
+        <h1>JAPAN FOOD</h1>
+        <!--Actualización del código Tarea 4: Menú desplegable con mouseover y mouseout de Javascript-->
+        <div class="dropdown-platillos" id="dropdown-platillos">
+            <button class="dropdown-boton" id="dropdown-boton" aria-haspopup="true" aria-expanded="false" data-es="Platillos" data-en="Dishes"> Platillos </button>
+            <ul class="dropdown-lista" id="dropdown-lista">
+                <li><a href="menu.html#ramen">Ramen</a></li>
+                <li><a href="menu.html#sushi">Sushi</a></li>
+                <li><a href="menu.html#takoyaki">Takoyaki</a></li>
+                <li><a href="menu.html#onigiri">Onigiri</a></li>
+        </ul>
+        </div>
+    </header>
+<!--Actualización del código Tarea 4: Traducción del menú lateral-->
+    <nav id="menu-lateral" class="sidebar">
+        <!--Título del menú lateral-->
+        <h2 data-es="ÍNDICE" data-en="INDEX"> ÍNDICE </h2>
+        <!--Lista de elementos para acceder a las diferentes secciones de la página web-->
+        <ul>
+            <li><a href="introduccion.html" data-es="Introducción" data-en="Introduction"> Introducción </a></li>
+            <li><a href="caracteristicas.html" data-es="Características" data-en="Features"> Características </a></li>
+            <li><a href="cultura.html" data-es="Cultura" data-en="Culture"> Cultura </a></li>
+            <li><a href="menu.html" data-es="Menú" data-en="Menu"> Menú </a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="seccion">
+            <!--Actualización del código Tarea 4 Traducción del título-->
+            <h2 data-es="Cultura" data-en="Culture"> Cultura </h2>
+            <p>La cocina japonesa va de la mano con sus creencias y costumbres, en donde su historia y geografía tienen
+                gran valor en cada platillo. El respeto por los ingredientes y las ceremonias relacionadas a la comida
+                tienen un gran impacto cultural.</p>
+            <p>Iconos como el Monte Fuji, las flores de cerezo (Sakura) y las puertas Torii representan la esencia de un
+                país donde la tradición y la modernidad coexisten en perfecta armonía.</p>
+        </section>
+    </main>
+
+    <footer>
+        <!--Actualización del código Tarea 4 Botón de cambio de idioma-->
+        <p data-es="JAPAN FOOD - Santiago Bernal Pertuz - UNAD - Programación Web"
+        data-en="JAPAN FOOD - Santiago Bernal Pertuz - UNAD - Web Programming">
+    </p>
+        <!--Botón de cambio de idioma-->
+        <button id="btn-idioma" class="btn-idioma" aria-label="Cambiar idioma / Switch language"> ES </button>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
